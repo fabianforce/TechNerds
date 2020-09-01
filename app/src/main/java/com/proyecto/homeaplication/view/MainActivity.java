@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements IChat.MainView {
     private IChat.MainPresenter iPresenter;
     private FirebaseAuth mAuth;
     EditText nameText, lastNameText, emailText, passText, phoneText;
-    Button registerBtn,logInBtn;
+    Button registerBtn,logInBtn,addContactBtn;
     TextView registerLabel,loginLabel;
 
     @Override
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements IChat.MainView {
                  * method: createUser()
                  * description: User Register
                  */
-                iPresenter.createUser(getApplicationContext(),nameText.getText().toString(),lastNameText.getText().toString(),emailText.getText().toString(),passText.getText().toString(),phoneText.getText().toString());
+                iPresenter.createUser(getApplicationContext(),nameText,lastNameText,emailText,passText,phoneText, loginLabel, registerBtn, logInBtn, registerLabel);
             }
         });
 

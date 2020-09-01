@@ -6,11 +6,11 @@
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/recyclerSerires"
+        android:id="@+id/contact_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#2FBD97FF">
+        app:cardBackgroundColor="#fff">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,9 +20,9 @@
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/user"
                 app:civ_border_color="#F84E53"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -41,6 +41,7 @@
                 android:id="@+id/email_label"
                 android:layout_width="match_parent"
                 android:text="hihi"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"/>

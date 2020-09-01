@@ -1,6 +1,9 @@
 package com.proyecto.homeaplication.presenter;
 
 import android.content.Context;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,9 +30,9 @@ public class MainActivityPresenter implements IChat.MainPresenter {
     }
 
     @Override
-    public void createUser(Context context, String name, String lastName, String email, String password, String phone) {
+    public void createUser(Context context, EditText name, EditText lastName, EditText email, EditText password, EditText phone, TextView loginLabel, Button registerButton,  Button singInBtn, TextView registerLabel) {
         if (iView != null) {
-            iModel.createUser(context,name,lastName,email,password,phone);
+            iModel.createUser(context,name,lastName,email,password,phone,loginLabel,registerButton,singInBtn,registerLabel);
         }
     }
 
