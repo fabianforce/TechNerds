@@ -1,5 +1,7 @@
 package com.proyecto.homeaplication.presenter;
 
+import android.content.Context;
+
 import com.proyecto.homeaplication.interfaces.IChat;
 import com.proyecto.homeaplication.model.User;
 
@@ -23,9 +25,9 @@ public class MainActivityPresenter implements IChat.MainPresenter {
     }
 
     @Override
-    public void createUser() {
+    public void createUser(Context context, String name, String lastName, String email, String password, String phone) {
         if (iView != null) {
-            iModel.createUser();
+            iModel.createUser(context,name,lastName,email,password,phone);
         }
     }
 }
