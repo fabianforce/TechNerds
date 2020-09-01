@@ -2,6 +2,8 @@ package com.proyecto.homeaplication.presenter;
 
 import android.content.Context;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.proyecto.homeaplication.interfaces.IChat;
 import com.proyecto.homeaplication.model.User;
 
@@ -30,4 +32,12 @@ public class MainActivityPresenter implements IChat.MainPresenter {
             iModel.createUser(context,name,lastName,email,password,phone);
         }
     }
+
+    @Override
+    public void signInWithEmail(String email, String password) {
+        if (iView != null) {
+            iModel.signInWithEmail(email,password);
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ package com.proyecto.homeaplication.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,10 +42,14 @@ public class MainActivity extends AppCompatActivity implements IChat.MainView {
 
     @Override
     public void getUser(String name) {
+
+        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        intent.putExtra("email", name);
+        startActivity(intent);
     }
 
     public void setupVariables() {
-        registerBtn = findViewById(R.id.sigin_btn);
+        registerBtn = findViewById(R.id.register_btn);
         nameText = findViewById(R.id.name_text);
         lastNameText = findViewById(R.id.lastname_text);
         emailText = findViewById(R.id.email_text);
@@ -71,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements IChat.MainView {
                 nameText.setVisibility(View.VISIBLE);
                 lastNameText.setVisibility(View.VISIBLE);
                 phoneText.setVisibility(View.VISIBLE);
-                registerBtn.setVisibility(View.VISIBLE);
                 registerLabel.setVisibility(View.GONE);
                 logInBtn.setVisibility(View.GONE);
                 loginLabel.setVisibility(View.VISIBLE);
@@ -98,6 +102,11 @@ public class MainActivity extends AppCompatActivity implements IChat.MainView {
             @Override
             public void onClick(View view) {
 
+                /**
+                 * method: signInWithEmail()
+                 * description: signIn With the Email And Password
+                 */
+                iPresenter.signInWithEmail(emailText.getText().toString(),passText.getText().toString());
             }
         });
     }
